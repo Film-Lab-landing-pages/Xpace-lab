@@ -20,6 +20,7 @@ export const Circle = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 5;
   span {
     color: #000;
     font-size: 2rem;

@@ -69,9 +69,9 @@ const Galaxy: React.FC = () => {
       >
         <path
           id="orbit-path"
-          d="M 700,325
-             a 400,150 0 1,0 -800,50
-             a 400,150 0 1,0 800,-50"
+          d="M 800,325
+             a 500,170 0 1,0 -1000,50
+             a 500,170 0 1,0 1000,-50"
           fill="none"
           stroke="transparent"
           strokeDasharray="6 6"
@@ -91,7 +91,8 @@ const Galaxy: React.FC = () => {
         <div ref={planetRefs[0]} style={{ position: "absolute" }}>
           <OrbitPlanet
             imageSrc="./logo-nca.png"
-            backgroundColor={ncaColor}
+            planetColor={ncaColor}
+            hoverTitle="NCA"
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
@@ -99,7 +100,8 @@ const Galaxy: React.FC = () => {
         <div ref={planetRefs[1]} style={{ position: "absolute" }}>
           <OrbitPlanet
             imageSrc="./logo-digi4all.png"
-            backgroundColor={digi4allColor}
+            planetColor={digi4allColor}
+            hoverTitle="Digi4All"
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
@@ -107,7 +109,8 @@ const Galaxy: React.FC = () => {
         <div ref={planetRefs[2]} style={{ position: "absolute" }}>
           <OrbitPlanet
             imageSrc="./logo-film-lab.png"
-            backgroundColor={filmLabColor}
+            planetColor={filmLabColor}
+            hoverTitle="Film Lab"
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
@@ -115,7 +118,8 @@ const Galaxy: React.FC = () => {
         <div ref={planetRefs[3]} style={{ position: "absolute" }}>
           <OrbitPlanet
             imageSrc="./logo-facil.png"
-            backgroundColor={facilColor}
+            planetColor={facilColor}
+            hoverTitle="Facil"
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>

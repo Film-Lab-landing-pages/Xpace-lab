@@ -8,15 +8,10 @@ interface PlanetProps extends React.HTMLAttributes<HTMLDivElement> {
   bottom?: string;
   left?: string;
   right?: string;
-  backgroundColor?: string;
+  planetColor: string;
+  hoverContent?: string;
+  hoverTitle: string;
 }
-
-const OrbitBeforeContentTest = () => (
-  <OrbitBeforeContent className="orbit-before-content">
-    <h1>Conteúdo Teste</h1>
-    <p>Este é um parágrafo de teste.</p>
-  </OrbitBeforeContent>
-);
 
 const OrbitPlanet: React.FC<PlanetProps> = ({
   top,
@@ -24,7 +19,9 @@ const OrbitPlanet: React.FC<PlanetProps> = ({
   left,
   right,
   imageSrc,
-  backgroundColor,
+  planetColor,
+  hoverContent,
+  hoverTitle,
   ...rest
 }) => (
   <OrbitCircle
@@ -33,10 +30,17 @@ const OrbitPlanet: React.FC<PlanetProps> = ({
     bottom={bottom}
     left={left}
     right={right}
-    backgroundColor={backgroundColor}
+    planetColor={planetColor}
     {...rest}
   >
     <img src={imageSrc} />
+    <OrbitBeforeContent className="orbit-before-content">
+      <h2>{hoverTitle}</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </OrbitBeforeContent>
   </OrbitCircle>
 );
 

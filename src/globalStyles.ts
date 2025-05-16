@@ -3,14 +3,15 @@ import { keyframes } from "styled-components";
 
 interface BackgroundProps {
   image: string;
+  backgroundheight?: string;
 }
 export const Background = styled.div<BackgroundProps>`
   background-image: url(${(props) => props.image});
-  background-size: cover; // alterado aqui
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 100vh;
+  height: ${(props) => props.backgroundheight || "100vh"};
   display: block;
   overflow-x: hidden;
   position: relative;
