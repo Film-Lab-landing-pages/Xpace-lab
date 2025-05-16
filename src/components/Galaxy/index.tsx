@@ -12,8 +12,13 @@ const Galaxy: React.FC = () => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
   ];
   const animationRefs = useRef<gsap.core.Tween[]>([]);
+  const digi4allColor = "#F90094";
+  const filmLabColor = "#0023B5";
+  const facilColor = "#F9B807";
+  const ncaColor = "#931E26";
 
   useEffect(() => {
     // Mata animações antigas antes de criar novas
@@ -84,19 +89,36 @@ const Galaxy: React.FC = () => {
         }}
       >
         <div ref={planetRefs[0]} style={{ position: "absolute" }}>
-          <OrbitPlanet onMouseEnter={handlePause} onMouseLeave={handleResume}>
-            nome 1
-          </OrbitPlanet>
+          <OrbitPlanet
+            imageSrc="./logo-nca.png"
+            backgroundColor={ncaColor}
+            onMouseEnter={handlePause}
+            onMouseLeave={handleResume}
+          ></OrbitPlanet>
         </div>
         <div ref={planetRefs[1]} style={{ position: "absolute" }}>
-          <OrbitPlanet onMouseEnter={handlePause} onMouseLeave={handleResume}>
-            nome 2
-          </OrbitPlanet>
+          <OrbitPlanet
+            imageSrc="./logo-digi4all.png"
+            backgroundColor={digi4allColor}
+            onMouseEnter={handlePause}
+            onMouseLeave={handleResume}
+          ></OrbitPlanet>
         </div>
         <div ref={planetRefs[2]} style={{ position: "absolute" }}>
-          <OrbitPlanet onMouseEnter={handlePause} onMouseLeave={handleResume}>
-            nome 3
-          </OrbitPlanet>
+          <OrbitPlanet
+            imageSrc="./logo-film-lab.png"
+            backgroundColor={filmLabColor}
+            onMouseEnter={handlePause}
+            onMouseLeave={handleResume}
+          ></OrbitPlanet>
+        </div>
+        <div ref={planetRefs[3]} style={{ position: "absolute" }}>
+          <OrbitPlanet
+            imageSrc="./logo-facil.png"
+            backgroundColor={facilColor}
+            onMouseEnter={handlePause}
+            onMouseLeave={handleResume}
+          ></OrbitPlanet>
         </div>
       </div>
       <Circle className="-mt-30">

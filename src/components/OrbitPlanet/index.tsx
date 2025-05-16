@@ -1,21 +1,30 @@
 "use client";
 import React from "react";
-import { OrbitCircle, OrbitText } from "./styles";
+import { OrbitBeforeContent, OrbitCircle, OrbitText } from "./styles";
 
 interface PlanetProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
+  imageSrc: string;
   top?: string;
   bottom?: string;
   left?: string;
   right?: string;
+  backgroundColor?: string;
 }
 
+const OrbitBeforeContentTest = () => (
+  <OrbitBeforeContent className="orbit-before-content">
+    <h1>Conteúdo Teste</h1>
+    <p>Este é um parágrafo de teste.</p>
+  </OrbitBeforeContent>
+);
+
 const OrbitPlanet: React.FC<PlanetProps> = ({
-  children,
   top,
   bottom,
   left,
   right,
+  imageSrc,
+  backgroundColor,
   ...rest
 }) => (
   <OrbitCircle
@@ -24,9 +33,10 @@ const OrbitPlanet: React.FC<PlanetProps> = ({
     bottom={bottom}
     left={left}
     right={right}
+    backgroundColor={backgroundColor}
     {...rest}
   >
-    <OrbitText className="orbit-text">{children}</OrbitText>
+    <img src={imageSrc} />
   </OrbitCircle>
 );
 
