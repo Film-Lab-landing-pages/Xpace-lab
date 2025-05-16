@@ -6,14 +6,17 @@ interface BackgroundProps {
 }
 export const Background = styled.div<BackgroundProps>`
   background-image: url(${(props) => props.image});
-  background-size: 100% auto;
-  background-position: top center;
+  background-size: cover; // alterado aqui
+  background-position: center center;
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   display: block;
   overflow-x: hidden;
+  position: relative;
 `;
+
+//* Astronaut styles */
 
 const float = keyframes`
     0% {
@@ -32,7 +35,7 @@ export const FloatingAstronaut = styled.img.attrs({
   alt: "Astronaut",
 })`
   position: fixed;
-  right: 32px;
+  right: 64px;
   bottom: 32px;
   width: 120px;
   height: auto;
