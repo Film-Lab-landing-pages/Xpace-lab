@@ -27,3 +27,14 @@ export const Circle = styled.div`
     font-weight: 400;
   }
 `;
+export const Orbit = styled.div`
+  position: "absolute";
+  top: 0;
+  left: 0;
+  width: 600;
+  height: 600;
+  z-index: 5;
+  .orbit-div:hover {
+    z-index: 20;
+  }
+`;

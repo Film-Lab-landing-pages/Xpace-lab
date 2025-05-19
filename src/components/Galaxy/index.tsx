@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { GalaxyContainer, Circle } from "./styles";
+import { GalaxyContainer, Circle, Orbit } from "./styles";
 import OrbitPlanet from "../OrbitPlanet";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
@@ -7,7 +7,8 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 gsap.registerPlugin(MotionPathPlugin);
 
 const Galaxy: React.FC = () => {
-  const [duration] = useState(100); // ajuste a velocidade aqui
+  const [duration] = useState(100);
+  const [planetZIndex, setPlanetZIndex] = useState(3);
   const planetRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -52,11 +53,16 @@ const Galaxy: React.FC = () => {
   const handleResume = () => {
     animationRefs.current.forEach((anim) => anim && anim.resume());
   };
+  const handleMouseOver = () => {
+    setPlanetZIndex(200);
+  };
+  const handleMouseOut = () => {
+    setPlanetZIndex(0);
+  };
 
   return (
     <GalaxyContainer>
       <svg
-        className="-mt-30"
         width={1200}
         height={600}
         style={{
@@ -70,8 +76,8 @@ const Galaxy: React.FC = () => {
         <path
           id="orbit-path"
           d="M 800,325
-             a 500,170 0 1,0 -1000,50
-             a 500,170 0 1,0 1000,-50"
+             a 500,175 0 1,0 -1000,70
+             a 500,175 0 1,0 1000,-70"
           fill="none"
           stroke="transparent"
           strokeDasharray="6 6"
@@ -79,16 +85,12 @@ const Galaxy: React.FC = () => {
           opacity={0.3}
         />
       </svg>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: 600,
-          height: 600,
-        }}
-      >
-        <div ref={planetRefs[0]} style={{ position: "absolute" }}>
+      <Orbit>
+        <div
+          className="orbit-div"
+          ref={planetRefs[0]}
+          style={{ position: "absolute" }}
+        >
           <OrbitPlanet
             imageSrc="./logo-nca.png"
             planetColor={ncaColor}
@@ -97,7 +99,11 @@ const Galaxy: React.FC = () => {
             onMouseLeave={handleResume}
           ></OrbitPlanet>
         </div>
-        <div ref={planetRefs[1]} style={{ position: "absolute" }}>
+        <div
+          className="orbit-div"
+          ref={planetRefs[1]}
+          style={{ position: "absolute" }}
+        >
           <OrbitPlanet
             imageSrc="./logo-digi4all.png"
             planetColor={digi4allColor}
@@ -106,7 +112,11 @@ const Galaxy: React.FC = () => {
             onMouseLeave={handleResume}
           ></OrbitPlanet>
         </div>
-        <div ref={planetRefs[2]} style={{ position: "absolute" }}>
+        <div
+          className="orbit-div"
+          ref={planetRefs[2]}
+          style={{ position: "absolute" }}
+        >
           <OrbitPlanet
             imageSrc="./logo-film-lab.png"
             planetColor={filmLabColor}
@@ -115,7 +125,11 @@ const Galaxy: React.FC = () => {
             onMouseLeave={handleResume}
           ></OrbitPlanet>
         </div>
-        <div ref={planetRefs[3]} style={{ position: "absolute" }}>
+        <div
+          className="orbit-div"
+          ref={planetRefs[3]}
+          style={{ position: "absolute" }}
+        >
           <OrbitPlanet
             imageSrc="./logo-facil.png"
             planetColor={facilColor}
@@ -124,14 +138,14 @@ const Galaxy: React.FC = () => {
             onMouseLeave={handleResume}
           ></OrbitPlanet>
         </div>
-      </div>
-      <Circle className="-mt-30">
-        <span>
-          XPACE
-          <br />
-          LAB
-        </span>
-      </Circle>
+        <Circle>
+          <span>
+            XPACE
+            <br />
+            LAB
+          </span>
+        </Circle>
+      </Orbit>
     </GalaxyContainer>
   );
 };

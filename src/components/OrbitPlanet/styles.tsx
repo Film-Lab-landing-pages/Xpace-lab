@@ -6,12 +6,12 @@ interface OrbitCircleProps {
   bottom?: string;
   left?: string;
   right?: string;
-  planetColor?: string;
+  $planetColor?: string;
 }
 
 export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
   border: 5px solid #fff;
-  background-color: ${({ planetColor }) => planetColor || "transparent"};
+  background-color: ${({ $planetColor }) => $planetColor || "transparent"};
   width: 150px;
   height: 150px;
   position: absolute;
@@ -33,7 +33,7 @@ export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
     transform: translate(-50%, -50%);
     width: 150px;
     height: 150px;
-    background: #d9d9d980;
+    background: #14131380;
     opacity: 0.8;
     border-radius: 50%;
     opacity: 0;
@@ -50,14 +50,15 @@ export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
   &:hover .orbit-before-content,
   &:hover::before {
     opacity: 1;
-    top: -15%;
-    left: -15%;
+    top: -25%;
+    left: -20%;
     pointer-events: auto;
   }
   &:hover::before {
-    border-radius: 20px;
-    width: 180px;
-    height: 200px;
+    border-radius: 0;
+    padding: 8px;
+    width: 160px;
+    height: 220px;
   }
 `;
 
@@ -75,10 +76,13 @@ export const OrbitBeforeContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 10;
   transition: opacity 0.3s, top 0.5s, left 0.5s;
   color: #fff;
   font-family: "Inter", sans-serif;
+  img {
+    position: absolute;
+  }
 
   h2 {
     font-weight: 700;
@@ -99,4 +103,13 @@ export const OrbitText = styled.span`
   font-weight: 400;
   color: #fff;
   display: inline-block;
+`;
+
+export const Orbit = styled.div`
+  position: "absolute";
+  top: 0;
+  left: 0;
+  width: 600;
+  height: 600;
+  z-index: 5;
 `;
