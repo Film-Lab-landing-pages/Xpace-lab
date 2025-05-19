@@ -67,7 +67,7 @@ export const AboutCard = styled.div`
 
 export const Contact = styled.div`
   position: absolute;
-  bottom: 20vw;
+  bottom: 50vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

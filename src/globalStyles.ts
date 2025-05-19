@@ -23,6 +23,7 @@ export const Background = styled.div<BackgroundProps>`
   height: ${(props) => props.backgroundheight + "px"};
   display: block;
   overflow-x: hidden;
+  position: relative;
 
   .planet-rotation {
     animation: ${rotation} 240s infinite linear;
@@ -75,6 +76,6 @@ export const Asteroids = styled.div`
     top: 0;
     width: 200vw;
 
-    animation: ${moveAsteroids} 30s linear infinite;
+    animation: ${moveAsteroids} 100s linear infinite;
   }
 `;
