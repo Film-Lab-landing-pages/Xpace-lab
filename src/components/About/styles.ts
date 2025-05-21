@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AboutCard = styled.div`
   margin: auto;
-  margin-top: 25%;
+  margin-top: 18%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,6 +28,8 @@ export const AboutCard = styled.div`
   }
 
   p {
+    font-size: 22px;
+    font-weight: 100;
     max-width: 730px;
     margin-bottom: 20px;
     text-align: center;
@@ -87,5 +89,10 @@ export const Contact = styled.div`
     padding: 10px 8px;
     margin-bottom: 32px;
     cursor: pointer;
+  }
+  button:hover {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 5px 2px #fff;
   }
 `;

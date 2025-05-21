@@ -15,7 +15,7 @@ const rotation = keyframes`
 `;
 
 export const Background = styled.div<BackgroundProps>`
-  background-image: url(${(props) => props.image});
+  background-color: transparent;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

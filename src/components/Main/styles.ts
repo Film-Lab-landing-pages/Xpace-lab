@@ -11,7 +11,7 @@ export const PlanetContainer = styled.div`
 `;
 export const CTA = styled.div`
   position: absolute;
-  bottom: 10vh;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

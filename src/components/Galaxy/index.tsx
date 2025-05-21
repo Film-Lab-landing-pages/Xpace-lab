@@ -14,6 +14,7 @@ const Galaxy: React.FC = () => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
   ];
   const animationRefs = useRef<gsap.core.Tween[]>([]);
   const digi4allColor = "#F90094";
@@ -105,6 +106,19 @@ const Galaxy: React.FC = () => {
           style={{ position: "absolute" }}
         >
           <OrbitPlanet
+            imageSrc="./logo-fora-da-caixa.png"
+            planetColor={facilColor}
+            hoverTitle="Facil"
+            onMouseEnter={handlePause}
+            onMouseLeave={handleResume}
+          ></OrbitPlanet>
+        </div>
+        <div
+          className="orbit-div"
+          ref={planetRefs[2]}
+          style={{ position: "absolute" }}
+        >
+          <OrbitPlanet
             imageSrc="./logo-digi4all.png"
             planetColor={digi4allColor}
             hoverTitle="Digi4All"
@@ -114,7 +128,7 @@ const Galaxy: React.FC = () => {
         </div>
         <div
           className="orbit-div"
-          ref={planetRefs[2]}
+          ref={planetRefs[3]}
           style={{ position: "absolute" }}
         >
           <OrbitPlanet
@@ -127,7 +141,7 @@ const Galaxy: React.FC = () => {
         </div>
         <div
           className="orbit-div"
-          ref={planetRefs[3]}
+          ref={planetRefs[4]}
           style={{ position: "absolute" }}
         >
           <OrbitPlanet
@@ -138,12 +152,13 @@ const Galaxy: React.FC = () => {
             onMouseLeave={handleResume}
           ></OrbitPlanet>
         </div>
+
         <Circle>
-          <span>
-            XPACE
-            <br />
-            LAB
-          </span>
+          <img
+            src="logo-xpace-lab.png"
+            alt="Logo xpace lab"
+            className="p-2.5"
+          />
         </Circle>
       </Orbit>
     </GalaxyContainer>

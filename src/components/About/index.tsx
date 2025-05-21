@@ -27,7 +27,7 @@ const About: React.FC = () => {
           src="./images/about-top.png"
           alt="Elemento visual da sessão 'Sobre Nós' "
         />
-        <h2>Sobre Nós</h2>
+        <h2>SOBRE NÓS</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -43,7 +43,7 @@ const About: React.FC = () => {
         />
       </AboutCard>
       <Contact>
-        <h2>Contato</h2>
+        <h2>CONTATO</h2>
         <button> Fale com a Nanda</button>
         <img src="./images/section-break.png" alt="" />
       </Contact>
