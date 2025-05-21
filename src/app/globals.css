@@ -23,3 +23,8 @@ h2 {
   font-family: "AeionMono", var(--font-akshar), sans-serif;
   font-weight: 700;
 }
+.background-video-container {
+  position: "relative";
+  inset: 0;
+  z-index: 1;
+}

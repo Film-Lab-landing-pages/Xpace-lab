@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AboutCard = styled.div`
   margin: auto;
-  margin-top: 18%;
+  margin-top: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ export const AboutCard = styled.div`
 
 export const Contact = styled.div`
   position: absolute;
-  bottom: 25%;
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

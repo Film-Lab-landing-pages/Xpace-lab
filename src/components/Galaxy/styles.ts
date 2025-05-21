@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const GalaxyContainer = styled.div`
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 
   width: 600px;
   height: 600px;

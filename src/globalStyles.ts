@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-interface BackgroundProps {
-  image: string;
+interface SectionProps {
   backgroundheight?: string;
 }
 const rotation = keyframes`
@@ -14,15 +13,11 @@ const rotation = keyframes`
   }
 `;
 
-export const Background = styled.div<BackgroundProps>`
+export const Section = styled.div<SectionProps>`
   background-color: transparent;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: ${(props) => props.backgroundheight + "px"};
+  height: ${(props) => props.backgroundheight};
   display: block;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 
   .planet-rotation {
@@ -65,9 +60,11 @@ const moveAsteroids = keyframes`
 `;
 
 export const Asteroids = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
   width: 100vw;
   overflow: hidden;
+  z-index: 100;
 
   .asteroids-img {
     z-index: 100;
@@ -77,5 +74,25 @@ export const Asteroids = styled.div`
     width: 200vw;
 
     animation: ${moveAsteroids} 100s linear infinite;
+  }
+`;
+export const VideoContainer = styled.div`
+  position: absolute;
+  top: 0;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+    z-index: 1;
   }
 `;

@@ -42,9 +42,10 @@ function Stars({ count = 500 }) {
 }
 
 export default function GalaxyBackground() {
+  const backgroundColor = new THREE.Color("#1f1e27");
   return (
     <Canvas camera={{ position: [0, 0, 60], fov: 75 }}>
-      <color attach="background" args={["#1f1e27"]} />
+      {/*  <color attach="background" args={["#1f1e27"]} /> */}
       <Stars count={1200} />
       <EffectComposer>
         <Bloom
