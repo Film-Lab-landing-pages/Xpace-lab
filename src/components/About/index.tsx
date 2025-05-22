@@ -2,7 +2,7 @@
 import React from "react";
 
 import { Section } from "../../globalStyles";
-import { AboutCard, Contact } from "./styles";
+import { AboutCard, Contact, ToggleButton } from "./styles";
 
 const About: React.FC = () => {
   return (
@@ -25,18 +25,18 @@ const About: React.FC = () => {
         />
         <h2>Sobre Nós</h2>
         <p>
-          No centro de uma galáxia criativa, pulsa o{" "}
-          <span style={{ fontWeight: "700", color: "#F90094" }}>
-            {" "}
-            Xpace Lab
-          </span>{" "}
+          No centro de uma galáxia criativa, pulsa o
+          <span style={{ fontWeight: "700", color: "#F90094" }}>Xpace Lab</span>
           — um universo onde <br /> estúdios, agências, escolas e ideias orbitam
           em perfeita sincronia. Aqui, ,<br /> conectamos a arte ao mercado, a
           inovação ao impacto, e o digital ao humano. <br />
           <span style={{ fontWeight: "700", color: "#FFB800" }}>
-            Seja bem-vindo ao espaço onde a criatividade expande fronteiras.{" "}
+            Seja bem-vindo ao espaço onde a criatividade expande fronteiras.
           </span>
         </p>
+        <ToggleButton backgroundcolor="">
+          <h2>Nosso Propósito</h2>
+        </ToggleButton>
         <img
           className="display-bottom"
           src="./images/about2.png"

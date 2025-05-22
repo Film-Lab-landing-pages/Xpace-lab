@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface StarsSectionProps {
+  aboutActive: boolean;
+}
+
 export const AboutCard = styled.div`
   position: absolute;
   top: 25%;
@@ -98,5 +102,21 @@ export const Contact = styled.div`
   }
   .section-break {
     max-width: 455px;
+  }
+`;
+
+interface ToggleButtonProps {
+  backgroundcolor: string;
+}
+
+export const ToggleButton = styled.button<ToggleButtonProps>`
+  width: 325px;
+  background-color: ${({ backgroundcolor }) => backgroundcolor};
+  h2 {
+    padding: 16px;
+    font-weight: 900;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
   }
 `;
