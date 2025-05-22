@@ -65,6 +65,15 @@ export const Header = styled.header`
     justify-content: center;
     gap: 20px;
   }
+  .logo-container {
+    position: relative;
+    img {
+      position: absolute;
+      top: 40px;
+      transform: translateY(-50%);
+      left: 24px;
+    }
+  }
 
   .menu-border {
     margin: auto;
@@ -74,6 +83,7 @@ export const Header = styled.header`
 export const NavItem = styled.h2<ItemProps>`
   font-size: 32px;
   font-weight: 900;
+  transition: color 0.3s;
   &:hover {
     color: ${(props) => props.hovercolor};
   }

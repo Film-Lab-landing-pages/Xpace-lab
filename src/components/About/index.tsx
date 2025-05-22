@@ -15,7 +15,7 @@ const About: React.FC = () => {
       <img
         src="images/moon.png"
         alt="Lua"
-        className="planet-rotation absolute bottom-0 left-1/2 translate-y-3/4 -translate-x-1/2 h-[80%] max-h-[1280px] object-contain"
+        className="planet-rotation absolute bottom-0 left-1/2 translate-y-[800px] -translate-x-1/2 h-[1280px] object-contain"
       />
       <AboutCard>
         <img

@@ -2,14 +2,11 @@ import styled, { keyframes } from "styled-components";
 import { Circle } from "../Galaxy/styles";
 
 interface OrbitCircleProps {
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
   $planetColor?: string;
 }
 interface OrbitBeforeContentProps {
   $planetColor?: string;
+  $highlightColor?: string;
 }
 
 export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
@@ -18,10 +15,6 @@ export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
   width: 150px;
   height: 150px;
   position: absolute;
-  top: ${({ top }) => top || "auto"};
-  bottom: ${({ bottom }) => bottom || "auto"};
-  left: ${({ left }) => left || "auto"};
-  right: ${({ right }) => right || "auto"};
   transition: box-shadow 0.3s;
   transition: box-shadow 0.3s;
 
@@ -74,9 +67,14 @@ export const OrbitBeforeContent = styled.div<OrbitBeforeContentProps>`
 
   p {
     font-weight: 400;
-    font-size: 14px;
+    line-height: 180%;
+    font-size: 12px;
     padding: 0 12px;
     text-align: center;
+    b {
+      color: ${({ $planetColor, $highlightColor }) =>
+        $highlightColor || $planetColor};
+    }
   }
   p,
   h2 {
@@ -89,16 +87,19 @@ export const OrbitBeforeContent = styled.div<OrbitBeforeContentProps>`
     color: #fff;
     font-size: 16px;
     background: rgba(0, 0, 0, 0.35);
-    border: 1px solid ${({ $planetColor }) => $planetColor};
+    border: 1px solid
+      ${({ $planetColor, $highlightColor }) => $highlightColor || $planetColor};
     padding: 6px 8px;
+    transition: box-shadow 0.3s;
 
     cursor: pointer;
   }
   button:hover {
-    font-weight: 700;
-    background: ${({ $planetColor }) => $planetColor};
-    box-shadow: 0 0 5px 1px ${({ $planetColor }) => $planetColor};
+    font-weight: 500;
+    background-color: ${({ $planetColor, $highlightColor }) =>
+      $highlightColor || $planetColor};
+    box-shadow: 0 0 5px 1px
+      ${({ $planetColor, $highlightColor }) => $highlightColor || $planetColor};
     color: #000;
-    filter: brightness(1.25);
   }
 `;

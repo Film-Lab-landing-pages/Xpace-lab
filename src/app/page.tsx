@@ -7,10 +7,14 @@ import {
   FloatingAstronaut,
   VideoContainer,
   Header,
+  NavItem,
 } from "../globalStyles";
 import GalaxyBackground from "@/components/Stars";
 
 export default function Home() {
+  const pink = "#F90096";
+  const yellow = "#F9B807";
+  const blue = "#5273FF";
   return (
     <div
       style={{
@@ -20,10 +24,13 @@ export default function Home() {
       }}
     >
       <Header>
+        <div className="logo-container ">
+          <img src="./logo-xpace-lab-imagem.png" alt="logo xpace lab" />
+        </div>
         <nav>
-          <h2>Universo</h2>
-          <h2>Estrelas</h2>
-          <h2>Contato</h2>
+          <NavItem hovercolor={pink}>Universo</NavItem>
+          <NavItem hovercolor={yellow}>Estrelas</NavItem>
+          <NavItem hovercolor={blue}>Contato</NavItem>
         </nav>
         <img className="menu-border" src="/images/menu-border.png" alt="" />
       </Header>
