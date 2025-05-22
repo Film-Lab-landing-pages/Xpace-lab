@@ -1,13 +1,13 @@
-"use client";
-import React from "react";
+'use client'
+import React from 'react'
 
-import { Section } from "../../globalStyles";
-import { AboutCard, Contact, ToggleButton } from "./styles";
+import { Section } from '../../globalStyles'
+import { AboutCard, Contact, ToggleButton } from './styles'
 
 const About: React.FC = () => {
-  const pink = "#F90096";
-  const yellow = "#F9B807";
-  const blue = "#5273FF";
+  const pink = '#F90096'
+  const yellow = '#F9B807'
+  const blue = '#5273FF'
   return (
     <Section backgroundheight="60%">
       <img
@@ -18,7 +18,7 @@ const About: React.FC = () => {
       <img
         src="images/moon.png"
         alt="Lua"
-        className="planet-rotation absolute bottom-0 left-1/2 translate-y-[800px] -translate-x-1/2 h-[1280px] object-contain"
+        className="planet-rotation absolute bottom-0 left-1/2 translate-y-[70%] -translate-x-1/2 h-[100vh] min-h-[700px] max-h-[1400px] object-contain"
       />
       <AboutCard>
         <img
@@ -29,11 +29,11 @@ const About: React.FC = () => {
         <h2>Sobre Nós</h2>
         <p>
           No centro de uma galáxia criativa, pulsa o
-          <span style={{ fontWeight: "700", color: "#F90094" }}>Xpace Lab</span>
+          <span style={{ fontWeight: '700', color: '#F90094' }}>Xpace Lab</span>
           — um universo onde <br /> estúdios, agências, escolas e ideias orbitam
           em perfeita sincronia. Aqui, ,<br /> conectamos a arte ao mercado, a
           inovação ao impacto, e o digital ao humano. <br />
-          <span style={{ fontWeight: "700", color: "#FFB800" }}>
+          <span style={{ fontWeight: '700', color: '#FFB800' }}>
             Seja bem-vindo ao espaço onde a criatividade expande fronteiras.
           </span>
         </p>
@@ -62,7 +62,7 @@ const About: React.FC = () => {
         />
       </Contact>
     </Section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
