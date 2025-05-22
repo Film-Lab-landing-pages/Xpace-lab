@@ -18,8 +18,9 @@ export const CTA = styled.div`
   flex-direction: column;
   align-items: center;
 
-  p {
+  h2 {
     font-size: 28px;
+    font-weight: 900;
     text-align: center;
   }
 `;

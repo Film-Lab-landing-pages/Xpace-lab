@@ -12,10 +12,7 @@ const Main: React.FC = () => {
         <Galaxy />
       </PlanetContainer>
       <CTA>
-        <p>
-          CTA para <br />
-          sobre nós + contato
-        </p>
+        <h2>Explore nossas estrelas</h2>
         <img src="./images/arrow.png" alt="" />
         <img src="./images/section-break.png" alt="" />
       </CTA>

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const AboutCard = styled.div`
-  margin: auto;
-  margin-top: 35%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +44,7 @@ export const AboutCard = styled.div`
   }
   .display-bottom {
     margin-top: 20px;
-    transform: translateY(-60px);
+    transform: translateY(-400%);
     transition: margin-top 0.5s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -69,7 +71,7 @@ export const AboutCard = styled.div`
 
 export const Contact = styled.div`
   position: absolute;
-  bottom: 20%;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -77,22 +79,16 @@ export const Contact = styled.div`
   align-items: center;
   h2 {
     font-weight: 700;
-    font-size: 55px;
+    font-size: 60px;
     transition: color 0.3s;
-    margin-bottom: 16px;
   }
-  button {
-    color: #fff;
-    font-size: 32px;
-    background: rgba(217, 217, 217, 0.5);
-    border: 1px solid #fff;
-    padding: 10px 8px;
+
+  .whatsapp-btn {
+    width: 100%;
+    max-width: 355px;
     margin-bottom: 32px;
-    cursor: pointer;
   }
-  button:hover {
-    background-color: #fff;
-    color: #000;
-    box-shadow: 0 0 5px 2px #fff;
+  .section-break {
+    max-width: 455px;
   }
 `;

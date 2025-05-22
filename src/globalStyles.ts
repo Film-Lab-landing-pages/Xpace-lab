@@ -25,6 +25,60 @@ export const Section = styled.div<SectionProps>`
   }
 `;
 
+export const VideoContainer = styled.div`
+  position: absolute;
+  top: 0;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.36);
+    pointer-events: none;
+    z-index: 1;
+  }
+`;
+
+interface ItemProps {
+  hovercolor: string;
+}
+
+export const Header = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1100;
+  nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .menu-border {
+    margin: auto;
+  }
+`;
+
+export const NavItem = styled.h2<ItemProps>`
+  font-size: 32px;
+  font-weight: 900;
+  &:hover {
+    color: ${(props) => props.hovercolor};
+  }
+`;
+
 //* Astronaut styles */
 
 const float = keyframes`
@@ -74,25 +128,5 @@ export const Asteroids = styled.div`
     width: 200vw;
 
     animation: ${moveAsteroids} 100s linear infinite;
-  }
-`;
-export const VideoContainer = styled.div`
-  position: absolute;
-  top: 0;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.25);
-    pointer-events: none;
-    z-index: 1;
   }
 `;

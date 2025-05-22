@@ -2,7 +2,12 @@
 
 import About from "@/components/About";
 import Main from "@/components/Main";
-import { Asteroids, FloatingAstronaut, VideoContainer } from "../globalStyles";
+import {
+  Asteroids,
+  FloatingAstronaut,
+  VideoContainer,
+  Header,
+} from "../globalStyles";
 import GalaxyBackground from "@/components/Stars";
 
 export default function Home() {
@@ -14,6 +19,14 @@ export default function Home() {
         overflow: "hidden",
       }}
     >
+      <Header>
+        <nav>
+          <h2>Universo</h2>
+          <h2>Estrelas</h2>
+          <h2>Contato</h2>
+        </nav>
+        <img className="menu-border" src="/images/menu-border.png" alt="" />
+      </Header>
       {/* fundo video */}
       <VideoContainer>
         <video

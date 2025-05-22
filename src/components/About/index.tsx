@@ -45,8 +45,18 @@ const About: React.FC = () => {
       </AboutCard>
       <Contact>
         <h2>Contato</h2>
-        <button> Fale com a Nanda</button>
-        <img src="./images/section-break.png" alt="" />
+        <a>
+          <img
+            className="whatsapp-btn"
+            src="./images/whatsapp-btn.png"
+            alt=""
+          />
+        </a>
+        <img
+          className="section-break"
+          src="./images/section-break.png"
+          alt=""
+        />
       </Contact>
     </Section>
   );
