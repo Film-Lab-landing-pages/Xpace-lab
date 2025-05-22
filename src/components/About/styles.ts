@@ -32,19 +32,23 @@ export const AboutCard = styled.div`
   p {
     font-size: 22px;
     font-weight: 100;
+    color: #fff;
+    display: block;
+  }
+  p,
+  b,
+  span {
     max-width: 730px;
     margin-bottom: 20px;
     text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    display: block;
-    white-space: nowrap;
     transition: opacity 0.5s, white-space 0.5s;
-    color: transparent;
+    opacity: 1;
+    pointer-events: auto;
+    white-space: normal;
   }
   .display-bottom {
-    margin-top: 20px;
-    transform: translateY(-400%);
+    transform: translateY(0) scale(1.05);
+    margin-top: 0;
     transition: margin-top 0.5s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -55,17 +59,21 @@ export const AboutCard = styled.div`
 
   // Anima a segunda imagem para baixo ao hover
   &:hover .display-bottom {
-    transform: translateY(0) scale(1.05);
-    margin-top: 0;
+    transform: translateY(-400%);
+    margin-top: 20px;
   }
 
   // Faz o p aparecer com fade in ao hover
-  &:hover p {
-    opacity: 1;
-    pointer-events: auto;
-    transition-delay: 0.2s;
-    white-space: normal;
-    color: #fff;
+  &:hover {
+    p,
+    b,
+    span {
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      color: transparent;
+      transition-delay: 0.2s;
+    }
   }
 `;
 
