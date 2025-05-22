@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface StarsSectionProps {
-  aboutActive: boolean;
+  aboutActive: boolean
 }
 
 export const AboutCard = styled.div`
@@ -75,7 +75,7 @@ export const AboutCard = styled.div`
       transition-delay: 0.2s;
     }
   }
-`;
+`
 
 export const Contact = styled.div`
   position: absolute;
@@ -85,9 +85,15 @@ export const Contact = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 5; /* Adicionado para garantir que fique acima da lua */
+
   h2 {
     font-weight: 700;
-    font-size: 60px;
+    font-size: clamp(
+      40px,
+      4vw,
+      60px
+    ); /* Adicionado responsividade ao tamanho da fonte */
     transition: color 0.3s;
   }
 
@@ -97,12 +103,13 @@ export const Contact = styled.div`
     margin-bottom: 32px;
   }
   .section-break {
-    max-width: 455px;
+    max-width: min(90vw, 455px); /* Adicionado limite baseado na viewport */
+    width: 100%;
   }
-`;
+`
 
 interface ToggleButtonProps {
-  buttoncolor: string;
+  buttoncolor: string
 }
 
 export const ToggleButton = styled.button<ToggleButtonProps>`
@@ -121,4 +128,4 @@ export const ToggleButton = styled.button<ToggleButtonProps>`
     background-color: ${({ buttoncolor }) => buttoncolor};
     color: #000;
   }
-`;
+`
