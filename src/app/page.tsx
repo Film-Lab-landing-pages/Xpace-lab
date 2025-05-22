@@ -10,6 +10,7 @@ import {
   NavItem,
 } from "../globalStyles";
 import GalaxyBackground from "@/components/Stars";
+import Link from "next/link";
 
 export default function Home() {
   const pink = "#F90096";
@@ -28,14 +29,21 @@ export default function Home() {
           <img src="./logo-xpace-lab-imagem.png" alt="logo xpace lab" />
         </div>
         <nav>
-          <NavItem hovercolor={pink}>Universo</NavItem>
-          <NavItem hovercolor={yellow}>Estrelas</NavItem>
-          <NavItem hovercolor={blue}>Contato</NavItem>
+          <NavItem hovercolor={pink}>
+            <Link href="#main">Universo</Link>
+          </NavItem>
+          <NavItem hovercolor={yellow}>
+            <Link href="#about"> Estrelas</Link>
+          </NavItem>
+
+          <NavItem hovercolor={blue}>
+            <Link href="#contact">Contato </Link>
+          </NavItem>
         </nav>
         <img className="menu-border" src="/images/menu-border.png" alt="" />
       </Header>
       {/* fundo video */}
-      <VideoContainer>
+      <VideoContainer id="main">
         <video
           style={{
             position: "absolute",
@@ -83,6 +91,7 @@ export default function Home() {
           />
         </Asteroids>
         <About />
+        <div id="contact"></div>
       </div>
     </div>
   );

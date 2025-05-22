@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-interface StarsSectionProps {
-  aboutActive: boolean;
-}
+//Sobre nós
 
 export const AboutCard = styled.div`
   position: absolute;
@@ -14,6 +12,13 @@ export const AboutCard = styled.div`
   align-items: center;
   width: 80%;
   z-index: 5;
+
+  .pink-span {
+    color: #f90096;
+  }
+  .yellow-span {
+    color: #f9b807;
+  }
 
   p,
   img,
@@ -30,7 +35,7 @@ export const AboutCard = styled.div`
   h2 {
     font-weight: 700;
     font-size: 55px;
-    transition: color 0.3s;
+    transition: color 0.3s, opacity 0.5s;
   }
 
   p {
@@ -38,6 +43,10 @@ export const AboutCard = styled.div`
     font-weight: 100;
     color: #fff;
     display: block;
+  }
+
+  span {
+    font-weight: 700;
   }
   p,
   b,
@@ -50,6 +59,9 @@ export const AboutCard = styled.div`
     pointer-events: auto;
     white-space: normal;
   }
+  button {
+    pointer-events: all;
+  }
   .display-bottom {
     transform: translateY(-150%) scale(1.05);
     margin-top: 0;
@@ -59,10 +71,13 @@ export const AboutCard = styled.div`
   &:hover {
     h2,
     img {
-      filter: brightness(1.1);
+      filter: brightness(1.5);
     }
+  }
+
+  &.active {
     .display-bottom {
-      transform: translateY(-550%);
+      transform: translateY(-700%);
       margin-top: 20px;
     }
     p,
@@ -74,30 +89,11 @@ export const AboutCard = styled.div`
       color: transparent;
       transition-delay: 0.2s;
     }
-  }
-`;
-
-export const Contact = styled.div`
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h2 {
-    font-weight: 700;
-    font-size: 60px;
-    transition: color 0.3s;
-  }
-
-  .whatsapp-btn {
-    width: 100%;
-    max-width: 355px;
-    margin-bottom: 32px;
-  }
-  .section-break {
-    max-width: 455px;
+    button,
+    h2 {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 `;
 
@@ -105,10 +101,10 @@ interface ToggleButtonProps {
   buttoncolor: string;
 }
 
-export const ToggleButton = styled.button<ToggleButtonProps>`
+export const OurMissionButton = styled.button<ToggleButtonProps>`
   width: 325px;
   border: 1px solid ${({ buttoncolor }) => buttoncolor};
-  transform: translateY(200%);
+  transform: translateY(100%);
 
   h2 {
     padding: 8px 16px;
@@ -120,5 +116,50 @@ export const ToggleButton = styled.button<ToggleButtonProps>`
   &:hover {
     background-color: ${({ buttoncolor }) => buttoncolor};
     color: #000;
+    cursor: pointer;
+  }
+`;
+
+//nossa missão
+
+export const OurMissionCard = styled(AboutCard)`
+  top: 45%;
+  z-index: 7;
+  opacity: 1;
+  transition: opacity 1s;
+  &.active {
+    z-index: 1;
+    opacity: 0;
+  }
+`;
+
+export const AboutButton = styled(OurMissionButton)`
+  transform: translateY(-50%);
+`;
+
+export const Contact = styled.div`
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+
+  h2 {
+    font-weight: 700;
+    font-size: clamp(50px, 4vw, 60px);
+    transition: color 0.3s;
+  }
+
+  .whatsapp-btn {
+    width: 100%;
+    max-width: 355px;
+    margin-bottom: 32px;
+  }
+  .section-break {
+    max-width: min(90vw, 455px); /* Adicionado limite baseado na viewport */
+    width: 100%;
   }
 `;

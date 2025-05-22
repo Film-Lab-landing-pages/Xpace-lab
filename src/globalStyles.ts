@@ -140,3 +140,6 @@ export const Asteroids = styled.div`
     animation: ${moveAsteroids} 100s linear infinite;
   }
 `;
+interface ColorSpanProps {
+  spanColor: string;
+}
