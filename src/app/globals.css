@@ -1,18 +1,28 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "AeionMono";
+  src: url("/fonts/AeionMono-Bold.woff2") format("woff2"),
+    url("/fonts/AeionMono-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-inter: var(--font-inter);
-}
-
 body {
   background: var(--background);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-akshar), sans-serif;
   color: #ffffff;
+}
+h1,
+h2 {
+  font-family: "AeionMono", var(--font-akshar), sans-serif;
+  font-weight: 700;
+}
+button {
+  font-family: "AeionMono", var(--font-akshar), sans-serif;
 }

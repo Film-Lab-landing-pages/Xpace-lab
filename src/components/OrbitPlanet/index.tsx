@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { OrbitBeforeContent, OrbitCircle, OrbitText } from "./styles";
+import { OrbitBeforeContent, OrbitCircle } from "./styles";
 
 interface PlanetProps extends React.HTMLAttributes<HTMLDivElement> {
   imageSrc: string;
@@ -34,13 +34,14 @@ const OrbitPlanet: React.FC<PlanetProps> = ({
     {...rest}
   >
     <img src={imageSrc} />
-    <OrbitBeforeContent className="orbit-before-content">
-      <img src="./images/screen.png" alt="" />
+    <OrbitBeforeContent
+      $planetColor={planetColor}
+      className="orbit-before-content"
+    >
+      <img src="./images/info-card.png" alt="" />
       <h2>{hoverTitle}</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button>VIAJAR</button>
     </OrbitBeforeContent>
   </OrbitCircle>
 );

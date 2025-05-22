@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const GalaxyContainer = styled.div`
-  position: relative;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
   width: 600px;
   height: 600px;
   margin: 0 auto;
@@ -21,10 +25,9 @@ export const Circle = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  span {
-    color: #000;
-    font-size: 2rem;
-    font-weight: 400;
+
+  img {
+    padding: 16px;
   }
 `;
 export const Orbit = styled.div`

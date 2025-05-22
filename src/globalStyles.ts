@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-interface BackgroundProps {
-  image: string;
+interface SectionProps {
   backgroundheight?: string;
 }
 const rotation = keyframes`
@@ -14,19 +13,69 @@ const rotation = keyframes`
   }
 `;
 
-export const Background = styled.div<BackgroundProps>`
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: ${(props) => props.backgroundheight + "px"};
+export const Section = styled.div<SectionProps>`
+  background-color: transparent;
+  height: ${(props) => props.backgroundheight};
   display: block;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 
   .planet-rotation {
     animation: ${rotation} 240s infinite linear;
+  }
+`;
+
+export const VideoContainer = styled.div`
+  position: absolute;
+  top: 0;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.36);
+    pointer-events: none;
+    z-index: 1;
+  }
+`;
+
+interface ItemProps {
+  hovercolor: string;
+}
+
+export const Header = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1100;
+  nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .menu-border {
+    margin: auto;
+  }
+`;
+
+export const NavItem = styled.h2<ItemProps>`
+  font-size: 32px;
+  font-weight: 900;
+  &:hover {
+    color: ${(props) => props.hovercolor};
   }
 `;
 
@@ -65,9 +114,11 @@ const moveAsteroids = keyframes`
 `;
 
 export const Asteroids = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
   width: 100vw;
   overflow: hidden;
+  z-index: 100;
 
   .asteroids-img {
     z-index: 100;
