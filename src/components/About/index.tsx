@@ -5,6 +5,9 @@ import { Section } from "../../globalStyles";
 import { AboutCard, Contact, ToggleButton } from "./styles";
 
 const About: React.FC = () => {
+  const pink = "#F90096";
+  const yellow = "#F9B807";
+  const blue = "#5273FF";
   return (
     <Section backgroundheight="60%">
       <img
@@ -34,7 +37,7 @@ const About: React.FC = () => {
             Seja bem-vindo ao espaço onde a criatividade expande fronteiras.
           </span>
         </p>
-        <ToggleButton backgroundcolor="">
+        <ToggleButton buttoncolor={yellow}>
           <h2>Nosso Propósito</h2>
         </ToggleButton>
         <img

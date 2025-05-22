@@ -51,24 +51,20 @@ export const AboutCard = styled.div`
     white-space: normal;
   }
   .display-bottom {
-    transform: translateY(0) scale(1.05);
+    transform: translateY(-150%) scale(1.05);
     margin-top: 0;
     transition: margin-top 0.5s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  &:hover h2,
-  &:hover img {
-    filter: brightness(1.1);
-  }
-
-  // Anima a segunda imagem para baixo ao hover
-  &:hover .display-bottom {
-    transform: translateY(-400%);
-    margin-top: 20px;
-  }
-
-  // Faz o p aparecer com fade in ao hover
   &:hover {
+    h2,
+    img {
+      filter: brightness(1.1);
+    }
+    .display-bottom {
+      transform: translateY(-550%);
+      margin-top: 20px;
+    }
     p,
     b,
     span {
@@ -106,17 +102,23 @@ export const Contact = styled.div`
 `;
 
 interface ToggleButtonProps {
-  backgroundcolor: string;
+  buttoncolor: string;
 }
 
 export const ToggleButton = styled.button<ToggleButtonProps>`
   width: 325px;
-  background-color: ${({ backgroundcolor }) => backgroundcolor};
+  border: 1px solid ${({ buttoncolor }) => buttoncolor};
+  transform: translateY(200%);
+
   h2 {
-    padding: 16px;
+    padding: 8px 16px;
     font-weight: 900;
     font-size: 24px;
     text-align: center;
     vertical-align: middle;
+  }
+  &:hover {
+    background-color: ${({ buttoncolor }) => buttoncolor};
+    color: #000;
   }
 `;
