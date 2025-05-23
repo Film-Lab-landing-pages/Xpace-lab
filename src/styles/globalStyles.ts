@@ -46,49 +46,6 @@ export const VideoContainer = styled.div`
   }
 `;
 
-interface ItemProps {
-  hovercolor: string;
-}
-
-export const Header = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 1100;
-  nav {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  .logo-container {
-    position: relative;
-    img {
-      position: absolute;
-      top: 40px;
-      transform: translateY(-50%);
-      left: 24px;
-    }
-  }
-
-  .menu-border {
-    margin: auto;
-  }
-`;
-
-export const NavItem = styled.h2<ItemProps>`
-  font-size: 32px;
-  font-weight: 900;
-  transition: color 0.3s;
-  &:hover {
-    color: ${(props) => props.hovercolor};
-  }
-`;
-
 //* Astronaut styles */
 
 const float = keyframes`
@@ -122,24 +79,3 @@ const moveAsteroids = keyframes`
   0% { transform: translateX(0); }
   100% { transform: translateX(-100vw); }
 `;
-
-export const Asteroids = styled.div`
-  position: absolute;
-  top: 50%;
-  width: 100vw;
-  overflow: hidden;
-  z-index: 100;
-
-  .asteroids-img {
-    z-index: 100;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 200vw;
-
-    animation: ${moveAsteroids} 100s linear infinite;
-  }
-`;
-interface ColorSpanProps {
-  spanColor: string;
-}

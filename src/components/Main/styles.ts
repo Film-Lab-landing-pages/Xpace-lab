@@ -23,4 +23,7 @@ export const CTA = styled.div`
     font-weight: 900;
     text-align: center;
   }
+  img {
+    margin: 8px 0;
+  }
 `;
