@@ -8,14 +8,12 @@ import {
   VideoContainer,
   Header,
   NavItem,
-} from "../globalStyles";
+} from "../styles/globalStyles";
 import GalaxyBackground from "@/components/Stars";
 import Link from "next/link";
+import { colors } from "@/styles/variables";
 
 export default function Home() {
-  const pink = "#F90096";
-  const yellow = "#F9B807";
-  const blue = "#5273FF";
   return (
     <div
       style={{
@@ -29,14 +27,14 @@ export default function Home() {
           <img src="./logo-xpace-lab-imagem.png" alt="logo xpace lab" />
         </div>
         <nav>
-          <NavItem hovercolor={pink}>
+          <NavItem hovercolor={colors.pink}>
             <Link href="#main">Universo</Link>
           </NavItem>
-          <NavItem hovercolor={yellow}>
+          <NavItem hovercolor={colors.yellow}>
             <Link href="#about"> Estrelas</Link>
           </NavItem>
 
-          <NavItem hovercolor={blue}>
+          <NavItem hovercolor={colors.blue}>
             <Link href="#contact">Contato </Link>
           </NavItem>
         </nav>

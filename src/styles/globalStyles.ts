@@ -104,7 +104,7 @@ const float = keyframes`
 `;
 
 export const FloatingAstronaut = styled.img.attrs({
-  src: "images/astronaut.png",
+  src: "images/astronaut-2.png",
   alt: "Astronaut",
 })`
   position: fixed;

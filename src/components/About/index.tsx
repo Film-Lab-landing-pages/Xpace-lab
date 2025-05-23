@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { Section } from "../../globalStyles";
+import { Section } from "../../styles/globalStyles";
 import {
   AboutButton,
   AboutCard,
@@ -9,13 +9,11 @@ import {
   OurMissionButton,
   OurMissionCard,
 } from "./styles";
+import { colors } from "@/styles/variables";
 
 const About: React.FC = () => {
   const [ourMissionActive, setOurMissionActive] = React.useState(false);
 
-  const pink = "#F90096";
-  const yellow = "#F9B807";
-  const blue = "#5273FF";
   return (
     <Section backgroundheight="60%">
       <img
@@ -47,7 +45,7 @@ const About: React.FC = () => {
           </span>
         </p>
         <OurMissionButton
-          buttoncolor={yellow}
+          buttoncolor={colors.yellow}
           onClick={() => setOurMissionActive(true)}
         >
           <h2>NOSSO PROPÓSITO</h2>
@@ -60,7 +58,7 @@ const About: React.FC = () => {
       </AboutCard>
       <OurMissionCard className={!ourMissionActive ? "active" : ""}>
         <AboutButton
-          buttoncolor={pink}
+          buttoncolor={colors.pink}
           onClick={() => setOurMissionActive(false)}
         >
           <h2>SOBRE NÓS</h2>
