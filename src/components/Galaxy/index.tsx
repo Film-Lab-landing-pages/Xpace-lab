@@ -3,6 +3,7 @@ import { GalaxyContainer, Circle, Orbit } from "./styles";
 import OrbitPlanet from "../OrbitPlanet";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { colors, highlights } from "@/styles/variables";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -17,15 +18,6 @@ const Galaxy: React.FC = () => {
     useRef<HTMLDivElement>(null),
   ];
   const animationRefs = useRef<gsap.core.Tween[]>([]);
-  const pink = "#F90094";
-  const blue = "#0023B5";
-  const yellow = "#F9B807";
-  const red = "#931E26";
-
-  const highlights = {
-    red: "#DA4953",
-    blue: "#5273FF",
-  };
 
   const NCAContent = (
     <>
@@ -153,7 +145,7 @@ const Galaxy: React.FC = () => {
         >
           <OrbitPlanet
             imageSrc="./logo-nca.png"
-            planetColor={red}
+            planetColor={colors.red}
             highlightColor={highlights.red}
             hoverTitle="NCA"
             hoverContent={NCAContent}
@@ -168,7 +160,7 @@ const Galaxy: React.FC = () => {
         >
           <OrbitPlanet
             imageSrc="./logo-fora-da-caixa.png"
-            planetColor={yellow}
+            planetColor={colors.yellow}
             hoverTitle="Facil"
             hoverContent={foraDaCaixaContent}
             onMouseEnter={handlePause}
@@ -182,7 +174,7 @@ const Galaxy: React.FC = () => {
         >
           <OrbitPlanet
             imageSrc="./logo-digi4all.png"
-            planetColor={pink}
+            planetColor={colors.pink}
             hoverTitle="Digi4All"
             hoverContent={digi4AllContent}
             onMouseEnter={handlePause}
@@ -196,7 +188,7 @@ const Galaxy: React.FC = () => {
         >
           <OrbitPlanet
             imageSrc="./logo-film-lab.png"
-            planetColor={blue}
+            planetColor={colors.blue}
             highlightColor={highlights.blue}
             hoverTitle="Film Lab"
             hoverContent={filmLabContent}
@@ -211,7 +203,7 @@ const Galaxy: React.FC = () => {
         >
           <OrbitPlanet
             imageSrc="./logo-facil.png"
-            planetColor={yellow}
+            planetColor={colors.yellow}
             hoverTitle="Facil"
             hoverContent={facilContent}
             onMouseEnter={handlePause}

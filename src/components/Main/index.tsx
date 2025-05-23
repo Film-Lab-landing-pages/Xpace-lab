@@ -2,7 +2,7 @@
 import React from "react";
 
 import { CTA, PlanetContainer } from "./styles";
-import { Section } from "../../globalStyles";
+import { Section } from "../../styles/globalStyles";
 import Galaxy from "../Galaxy";
 
 const Main: React.FC = () => {

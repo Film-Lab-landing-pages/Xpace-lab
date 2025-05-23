@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "@/styles/variables";
 
 //Sobre nós
 
@@ -14,10 +15,10 @@ export const AboutCard = styled.div`
   z-index: 5;
 
   .pink-span {
-    color: #f90096;
+    color: ${colors.pink};
   }
   .yellow-span {
-    color: #f9b807;
+    color: ${colors.yellow};
   }
 
   p,
