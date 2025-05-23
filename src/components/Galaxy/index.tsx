@@ -4,6 +4,7 @@ import OrbitPlanet from "../OrbitPlanet";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { colors, highlights } from "@/styles/variables";
+import content from "./content";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -18,60 +19,6 @@ const Galaxy: React.FC = () => {
     useRef<HTMLDivElement>(null),
   ];
   const animationRefs = useRef<gsap.core.Tween[]>([]);
-
-  const NCAContent = (
-    <>
-      O <b>Núcleo de Capacitação Artística </b> é a escola de teatro
-      {/*  <br /> */}
-      que inspira corações e forma artistas. Do palco ao cotidiano,
-      {/*  <br /> */}é um espaço para viver, sentir e expressar a arte como
-      {/*  <br /> */}
-      linguagem universal
-    </>
-  );
-  const facilContent = (
-    <>
-      A <b>FACIL</b> é nossa academia de habilidades essenciais para{" "}
-      {/* <br /> */}
-      uma nova era. Criatividade, comunicação, influência e {/* <br /> */}
-      liderança ganham espaço em cursos que iluminam mentes e {/* <br /> */}
-      despertam vozes. Aqui, talentos brilham ainda mais.
-    </>
-  );
-  const foraDaCaixaContent = (
-    <>
-      Nossa <b> editora cósmica </b>é um convite para pensar diferente.
-      {/* <br /> */}
-      Com livros e projetos que tocam temas como diversidade,
-      {/* <br /> */}
-      sustentabilidade e empatia, o Lab Fora da Caixa é a centelha
-      {/* <br /> */}
-      que acende novas realidades através da cultura.
-    </>
-  );
-  const digi4AllContent = (
-    <>
-      A <b>Filmelab Digi4All</b> é a agência digital que acelera
-      {/* <br /> */}
-      marcas rumo ao futuro. Com criatividade estratégica,
-      {/* <br /> */}
-      lançamos campanhas, gerenciamos redes e {/* <br /> */}
-      impulsionamos negócios em direção ao crescimento.
-      {/* <br /> */}
-      Tudo isso com alma, dados e um toque de magia digital.
-    </>
-  );
-  const filmLabContent = (
-    <>
-      Na constelação da Xpace, a <b>Filmelab</b> é a supernova da
-      {/* <br /> */}
-      produção audiovisual. Com estúdios completos, direção
-      {/* <br /> */}
-      criativa e soluções de ponta, transformamos ideias em vídeos{" "}
-      {/* <br /> */}
-      de impacto, transmitindo mensagens que brilham no mercado.
-    </>
-  );
 
   useEffect(() => {
     // Mata animações antigas antes de criar novas
@@ -104,12 +51,6 @@ const Galaxy: React.FC = () => {
   };
   const handleResume = () => {
     animationRefs.current.forEach((anim) => anim && anim.resume());
-  };
-  const handleMouseOver = () => {
-    setPlanetZIndex(200);
-  };
-  const handleMouseOut = () => {
-    setPlanetZIndex(0);
   };
 
   return (
@@ -147,8 +88,8 @@ const Galaxy: React.FC = () => {
             imageSrc="./logo-nca.png"
             planetColor={colors.red}
             highlightColor={highlights.red}
-            hoverTitle="NCA"
-            hoverContent={NCAContent}
+            hoverTitle="NCA-SP"
+            hoverContent={content.NCA}
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
@@ -161,8 +102,8 @@ const Galaxy: React.FC = () => {
           <OrbitPlanet
             imageSrc="./logo-fora-da-caixa.png"
             planetColor={colors.yellow}
-            hoverTitle="Facil"
-            hoverContent={foraDaCaixaContent}
+            hoverTitle="FORA DA CAIXA"
+            hoverContent={content.ForaDaCaixa}
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
@@ -175,8 +116,8 @@ const Galaxy: React.FC = () => {
           <OrbitPlanet
             imageSrc="./logo-digi4all.png"
             planetColor={colors.pink}
-            hoverTitle="Digi4All"
-            hoverContent={digi4AllContent}
+            hoverTitle="DIGI4ALL"
+            hoverContent={content.Digi4All}
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
@@ -190,8 +131,8 @@ const Galaxy: React.FC = () => {
             imageSrc="./logo-film-lab.png"
             planetColor={colors.blue}
             highlightColor={highlights.blue}
-            hoverTitle="Film Lab"
-            hoverContent={filmLabContent}
+            hoverTitle="FILM LAB"
+            hoverContent={content.FilmLab}
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
@@ -204,8 +145,8 @@ const Galaxy: React.FC = () => {
           <OrbitPlanet
             imageSrc="./logo-facil.png"
             planetColor={colors.yellow}
-            hoverTitle="Facil"
-            hoverContent={facilContent}
+            hoverTitle="FACIL"
+            hoverContent={content.FACIL}
             onMouseEnter={handlePause}
             onMouseLeave={handleResume}
           ></OrbitPlanet>
