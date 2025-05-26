@@ -9,14 +9,14 @@ const Header = () => {
         <img src="./logo-xpace-lab-imagem.png" alt="logo xpace lab" />
       </div>
       <nav>
-        <NavItem hovercolor={colors.pink}>
+        <NavItem $hovercolor={colors.pink}>
           <Link href="#main">Universo</Link>
         </NavItem>
-        <NavItem hovercolor={colors.yellow}>
+        <NavItem $hovercolor={colors.yellow}>
           <Link href="#about"> Estrelas</Link>
         </NavItem>
 
-        <NavItem hovercolor={colors.blue}>
+        <NavItem $hovercolor={colors.blue}>
           <Link href="#contact">Contato </Link>
         </NavItem>
       </nav>

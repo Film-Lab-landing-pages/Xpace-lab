@@ -3,6 +3,8 @@ import { Circle } from "../Galaxy/styles";
 
 interface OrbitCircleProps {
   $planetColor?: string;
+  $tooltipTranslateX?: string;
+  $tooltipTranslateY?: string;
 }
 interface OrbitBeforeContentProps {
   $planetColor?: string;
@@ -16,7 +18,6 @@ export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
   height: 150px;
   position: absolute;
   transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s;
 
   &:hover {
     box-shadow: 0 0 16px 2px ${({ $planetColor }) => $planetColor},
@@ -27,8 +28,9 @@ export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
 
   &:hover .orbit-before-content {
     opacity: 1;
-    top: -25%;
-    left: -20%;
+    transform: translate(-50%, -50%)
+      translateX(${({ $tooltipTranslateX }) => $tooltipTranslateX})
+      translateY(${({ $tooltipTranslateY }) => $tooltipTranslateY});
     pointer-events: auto;
   }
 `;
