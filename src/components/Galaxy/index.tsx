@@ -10,7 +10,6 @@ gsap.registerPlugin(MotionPathPlugin);
 
 const Galaxy: React.FC = () => {
   const [duration] = useState(100);
-  const [planetZIndex, setPlanetZIndex] = useState(3);
   const planetRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -48,6 +47,7 @@ const Galaxy: React.FC = () => {
   // Pausa e retoma todas as animações
   const handlePause = () => {
     animationRefs.current.forEach((anim) => anim && anim.pause());
+    window.dispatchEvent(new Event("orbitPlanetsUpdate"));
   };
   const handleResume = () => {
     animationRefs.current.forEach((anim) => anim && anim.resume());

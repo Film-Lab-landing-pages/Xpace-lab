@@ -30,7 +30,7 @@ export const HeaderContainer = styled.header`
 `;
 
 interface ItemProps {
-  hovercolor: string;
+  $hovercolor: string;
 }
 
 export const NavItem = styled.h2<ItemProps>`
@@ -38,6 +38,6 @@ export const NavItem = styled.h2<ItemProps>`
   font-weight: 900;
   transition: color 0.3s;
   &:hover {
-    color: ${(props) => props.hovercolor};
+    color: ${(props) => props.$hovercolor};
   }
 `;
