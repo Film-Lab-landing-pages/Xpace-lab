@@ -19,6 +19,10 @@ export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
   position: absolute;
   transition: box-shadow 0.3s;
 
+  .orbit-before-content {
+    transform: translate(-50%, -50%);
+  }
+
   &:hover {
     box-shadow: 0 0 16px 2px ${({ $planetColor }) => $planetColor},
       0 0 2px 2px #7ecbff66;
@@ -45,13 +49,12 @@ export const OrbitBeforeContent = styled.div<OrbitBeforeContentProps>`
   left: 50%;
   width: 350px;
   height: 212px;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   z-index: 10;
-  transition: opacity 0.3s, top 0.5s, left 0.5s;
+  transition: opacity 0.3s, top 0.5s, left 0.5s, transform 0.3s;
   color: #fff;
 
   img {
