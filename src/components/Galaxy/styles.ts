@@ -31,9 +31,6 @@ export const Circle = styled.div`
   }
 `;
 export const Orbit = styled.div`
-  position: "absolute";
-  top: 0;
-  left: 0;
   width: 600;
   height: 600;
   z-index: 5;

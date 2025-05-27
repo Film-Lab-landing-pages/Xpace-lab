@@ -78,8 +78,15 @@ const Galaxy: React.FC = () => {
         />
       </svg>
       <Orbit>
-        {planets.map((planet, index) => (
-          <div className="orbit-div" ref={planetRefs[planet.order]}>
+        {planets.map((planet) => (
+          <div
+            className="orbit-div"
+            ref={planetRefs[planet.order]}
+            style={{
+              position: "absolute",
+            }}
+            key={planet.order}
+          >
             <OrbitPlanet
               key={planet.hoverTitle}
               hoverTitle={planet.hoverTitle}
