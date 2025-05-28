@@ -53,7 +53,6 @@ export default function Home() {
             <source src="/videos/xpace-lab-background.mp4" type="video/mp4" />
           </video>
         </VideoContainer>
-        <h1>{window.innerWidth}</h1>
         <PageContainer style={{ transform: `scale(${scale})` }}>
           <FloatingAstronaut />
           <Main />
