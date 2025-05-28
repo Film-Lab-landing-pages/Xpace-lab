@@ -2,57 +2,64 @@
 
 import About from "@/components/About";
 import Main from "@/components/Main";
-import { FloatingAstronaut, VideoContainer } from "../styles/globalStyles";
+import {
+  FloatingAstronaut,
+  PageContainer,
+  VideoContainer,
+} from "../styles/globalStyles";
 
 import Header from "@/components/Header";
 import { useEffect, useState } from "react";
 import { useStore } from "@/store/store";
 
 export default function Home() {
+  const scale = useStore((state) => state.scale);
+  useEffect(() => {
+    function handleResize() {
+      const screenwidth = window.innerWidth;
+      const width = 1920;
+      const proportion = Math.max(screenwidth / width, 0.7);
+
+      useStore.getState().setScale(proportion);
+    }
+
+    handleResize(); // chama ao montar
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div
       style={{
-        height: "3000px",
         marginTop: "-7.5%",
-        position: "relative",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        height: `${3000 * scale}px`,
+        width: "100vw",
         overflow: "hidden",
       }}
     >
-      <Header />
-
-      <VideoContainer id="main">
-        <video
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/videos/xpace-lab-background.mp4" type="video/mp4" />
-        </video>
-      </VideoContainer>
-
       <div
         style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          zIndex: 1,
-          top: 0,
-          left: 0,
+          position: "relative",
+          overflow: "hidden",
+          height: "3100px", // fixed height, not scaled
         }}
       >
-        <FloatingAstronaut />
-        <Main />
-        <About />
-        <div id="contact"></div>
+        <Header />
+
+        <VideoContainer id="main">
+          <video autoPlay loop muted playsInline>
+            <source src="/videos/xpace-lab-background.mp4" type="video/mp4" />
+          </video>
+        </VideoContainer>
+        <h1>{window.innerWidth}</h1>
+        <PageContainer style={{ transform: `scale(${scale})` }}>
+          <FloatingAstronaut />
+          <Main />
+
+          <About />
+        </PageContainer>
       </div>
     </div>
   );

@@ -17,8 +17,9 @@ export const Section = styled.div<SectionProps>`
   background-color: transparent;
   height: ${(props) => props.backgroundheight};
   display: block;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  width: 100vw;
 
   .planet-rotation {
     animation: ${rotation} 240s infinite linear;
@@ -43,6 +44,15 @@ export const VideoContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.36);
     pointer-events: none;
     z-index: 1;
+  }
+  video {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 0;
+    width: 100vw;
+    min-width: 1344px;
+    object-fit: cover;
   }
 `;
 
@@ -75,7 +85,12 @@ export const FloatingAstronaut = styled.img.attrs({
   user-select: none;
 `;
 
-const moveAsteroids = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100vw); }
+export const PageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  transform-origin: top center;
+  top: 0;
+  left: 0;
 `;
