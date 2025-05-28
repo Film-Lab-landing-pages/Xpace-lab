@@ -4,15 +4,16 @@ import About from "@/components/About";
 import Main from "@/components/Main";
 import { FloatingAstronaut, VideoContainer } from "../styles/globalStyles";
 
-import Link from "next/link";
-import { colors } from "@/styles/variables";
 import Header from "@/components/Header";
+import { useEffect, useState } from "react";
+import { useStore } from "@/store/store";
 
 export default function Home() {
   return (
     <div
       style={{
-        height: "3100px",
+        height: "3000px",
+        marginTop: "-7.5%",
         position: "relative",
         overflow: "hidden",
       }}
