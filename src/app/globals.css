@@ -22,6 +22,7 @@ h1,
 h2 {
   font-family: "AeionMono", var(--font-akshar), sans-serif;
   font-weight: 700;
+  font-size: clamp(50px, 4vw, 60px);
 }
 button {
   font-family: "AeionMono", var(--font-akshar), sans-serif;

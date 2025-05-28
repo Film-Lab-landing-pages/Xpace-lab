@@ -35,7 +35,7 @@ export const AboutCard = styled.div`
 
   h2 {
     font-weight: 700;
-    font-size: 55px;
+
     transition: color 0.3s, opacity 0.5s;
   }
 
@@ -150,7 +150,6 @@ export const Contact = styled.div`
 
   h2 {
     font-weight: 700;
-    font-size: clamp(50px, 4vw, 60px);
     transition: color 0.3s;
   }
 
