@@ -5,6 +5,7 @@ interface OrbitCircleProps {
   $planetColor?: string;
   $tooltipTranslateX?: string;
   $tooltipTranslateY?: string;
+  $scale: number;
 }
 interface OrbitBeforeContentProps {
   $planetColor?: string;
@@ -34,7 +35,7 @@ export const OrbitCircle = styled(Circle)<OrbitCircleProps>`
 
   &:hover .orbit-before-content {
     opacity: 1;
-    transform: translate(-50%, -50%)
+    transform: scale(${({ $scale }) => 1 / $scale}) translate(-50%, -50%)
       translateX(${({ $tooltipTranslateX }) => $tooltipTranslateX})
       translateY(${({ $tooltipTranslateY }) => $tooltipTranslateY});
     pointer-events: auto;
