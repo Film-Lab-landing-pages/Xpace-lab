@@ -1,6 +1,7 @@
 "use client";
-import React, { JSX, useRef } from "react";
+import React, { JSX, use, useRef } from "react";
 import { OrbitBeforeContent, OrbitCircle } from "./styles";
+import { useStore } from "@/store/store";
 
 interface PlanetProps extends React.HTMLAttributes<HTMLDivElement> {
   imageSrc: string;
@@ -23,6 +24,8 @@ const OrbitPlanet: React.FC<PlanetProps> = ({
     x: "0%",
     y: "0%",
   });
+const scale = useStore((state) => state.scale);
+
   function getTranslateX(element: HTMLElement): string {
     const rect = element.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -64,6 +67,7 @@ const OrbitPlanet: React.FC<PlanetProps> = ({
       $planetColor={planetColor}
       $tooltipTranslateX={tooltipTranslate.x}
       $tooltipTranslateY={tooltipTranslate.y}
+      $scale={scale}
       {...rest}
     >
       {/*  <div>{tooltipTranslate.x}</div> */}
