@@ -1,17 +1,10 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+import { useStore } from "@/store/store";
 
 interface SectionProps {
   backgroundheight?: string;
 }
-const rotation = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-`;
 
 export const Section = styled.div<SectionProps>`
   background-color: transparent;
@@ -20,10 +13,6 @@ export const Section = styled.div<SectionProps>`
   overflow: visible;
   position: relative;
   width: 100vw;
-
-  .planet-rotation {
-    animation: ${rotation} 240s infinite linear;
-  }
 `;
 
 export const VideoContainer = styled.div`
@@ -93,4 +82,28 @@ export const PageContainer = styled.div`
   transform-origin: top center;
   top: 0;
   left: 0;
+`;
+
+interface MainContainerProps {
+  $scale?: number;
+}
+const rotation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+`;
+export const MainContainer = styled.div<MainContainerProps>`
+  margin-top: -7.5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: ${({ $scale }) => 3000 * ($scale ?? 1)}px;
+  width: 100vw;
+  overflow: hidden;
+  .planet-rotation {
+    animation: ${rotation} 240s infinite linear;
+  }
 `;

@@ -15,18 +15,7 @@ const About: React.FC = () => {
   const [ourMissionActive, setOurMissionActive] = React.useState(false);
 
   return (
-    <Section backgroundheight="60%">
-      <img
-        id="about"
-        src="images/earth.png"
-        alt="Terra"
-        className="planet-rotation  scroll-mt-[500px] absolute left-0 top-1/3 -translate-y-1/4 -translate-x-1/2 h-[45%] max-h-[510px] object-contain"
-      />
-      <img
-        src="images/moon.png"
-        alt="Lua"
-        className="planet-rotation absolute bottom-0 left-1/2 translate-y-[70%] -translate-x-1/2 h-[100vh] min-h-[700px] max-h-[1400px] object-contain"
-      />
+    <Section id="about" className="scroll-mt-[500px]" backgroundheight="50%">
       <AboutCard className={ourMissionActive ? "active" : ""}>
         <img
           className="display-top"
