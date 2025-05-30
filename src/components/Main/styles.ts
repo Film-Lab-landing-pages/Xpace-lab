@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CTA = styled.div`
   position: absolute;
-  bottom: 10%;
+  bottom: 27.5%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

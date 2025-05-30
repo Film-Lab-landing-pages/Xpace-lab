@@ -5,7 +5,7 @@ import { colors } from "@/styles/variables";
 
 export const AboutCard = styled.div`
   position: absolute;
-  top: 25%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, 0);
   display: flex;
@@ -124,7 +124,7 @@ export const OurMissionButton = styled.button<ToggleButtonProps>`
 //nossa missão
 
 export const OurMissionCard = styled(AboutCard)`
-  top: 45%;
+  top: 27.5%;
   z-index: 7;
   opacity: 1;
   transition: opacity 1s;

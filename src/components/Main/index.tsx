@@ -7,7 +7,7 @@ import Galaxy from "../Galaxy";
 
 const Main: React.FC = () => {
   return (
-    <Section backgroundheight="40%">
+    <Section backgroundheight="50%">
       <Galaxy />
       <CTA>
         <h2>Explore nossas estrelas</h2>
