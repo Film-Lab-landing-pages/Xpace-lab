@@ -140,7 +140,7 @@ export const AboutButton = styled(OurMissionButton)`
 
 export const Contact = styled.div`
   position: absolute;
-  bottom: 15%;
+  bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

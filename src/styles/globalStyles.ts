@@ -100,10 +100,27 @@ export const MainContainer = styled.div<MainContainerProps>`
   position: relative;
   top: 0;
   left: 0;
-  height: ${({ $scale }) => 3000 * ($scale ?? 1)}px;
+  height: ${({ $scale }) => 3100 * ($scale ?? 1)}px;
   width: 100vw;
   /*  overflow: hidden; */
   .planet-rotation {
     animation: ${rotation} 240s infinite linear;
+  }
+`;
+
+export const Moon = styled.div`
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  img {
+    width: 70%;
+    min-width: 360px;
+    display: block;
   }
 `;

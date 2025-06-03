@@ -15,7 +15,10 @@ const About: React.FC = () => {
   const [ourMissionActive, setOurMissionActive] = React.useState(false);
 
   return (
-    <Section id="about" className="scroll-mt-[300px]" backgroundheight="50%">
+    <Section
+      id="about"
+      /* className="scroll-mt-[300px]" */ backgroundheight="1550px"
+    >
       <AboutCard className={ourMissionActive ? "active" : ""}>
         <img
           className="display-top"
@@ -59,7 +62,7 @@ const About: React.FC = () => {
         </p>
       </OurMissionCard>
 
-      <Contact className="scroll-mt-[1200px]">
+      <Contact id="contact">
         <h2>Contato</h2>
         <a>
           <img
