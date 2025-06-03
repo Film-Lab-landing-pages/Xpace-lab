@@ -77,7 +77,7 @@ export const FloatingAstronaut = styled.img.attrs({
 export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   z-index: 1;
   transform-origin: top center;
   top: 0;
@@ -97,12 +97,12 @@ const rotation = keyframes`
 `;
 export const MainContainer = styled.div<MainContainerProps>`
   margin-top: -7.5%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   height: ${({ $scale }) => 3000 * ($scale ?? 1)}px;
   width: 100vw;
-  overflow: hidden;
+  /*  overflow: hidden; */
   .planet-rotation {
     animation: ${rotation} 240s infinite linear;
   }

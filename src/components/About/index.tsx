@@ -15,7 +15,7 @@ const About: React.FC = () => {
   const [ourMissionActive, setOurMissionActive] = React.useState(false);
 
   return (
-    <Section id="about" className="scroll-mt-[500px]" backgroundheight="50%">
+    <Section id="about" className="scroll-mt-[300px]" backgroundheight="50%">
       <AboutCard className={ourMissionActive ? "active" : ""}>
         <img
           className="display-top"
